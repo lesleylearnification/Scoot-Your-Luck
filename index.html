@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Scoot Your Luck</title>
+  <meta name="description" content="A playful Scooter's Coffee-inspired stacking prototype." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="game-shell" aria-live="polite">
+    <header class="brand-bar">
+      <div class="brand-mark" aria-label="Scooter's Coffee inspired badge">
+        <span class="brand-est">EST. 1998</span>
+        <span class="brand-name">SCOOTER'S</span>
+        <span class="brand-coffee">COFFEE</span>
+      </div>
+      <div class="title-lockup">
+        <h1><span class="title-red">SCOOT</span> YOUR LUCK</h1>
+        <p>Build it higher. Make it crazier. Bank the most Smiles before it all comes crashing down.</p>
+      </div>
+      <div class="smile-mascot" aria-hidden="true">☺</div>
+    </header>
+
+    <section id="orderPhase" class="phase phase-order">
+      <div class="order-copy">
+        <p class="eyebrow">PHASE 1 · MAKE YOUR SCOOTER'S</p>
+        <h2>Start with a drink you'd actually order.</h2>
+        <p>Pick your cup, coffee, creaminess, flavor, finish, and real topping. Then press the button you definitely should not press.</p>
+      </div>
+
+      <div class="order-layout">
+        <div class="order-controls card-panel" aria-label="Drink builder">
+          <div class="choice-group">
+            <span class="choice-label">1. CUP</span>
+            <div class="segmented" data-group="cup">
+              <button class="choice active" data-value="Hot">Hot</button>
+              <button class="choice" data-value="Iced">Iced</button>
+              <button class="choice" data-value="Blender">Blender</button>
+            </div>
+          </div>
+          <div class="choice-group">
+            <span class="choice-label">2. COFFEE</span>
+            <div class="segmented" data-group="coffee">
+              <button class="choice active" data-value="Espresso">Espresso</button>
+              <button class="choice" data-value="Cold Brew">Cold Brew</button>
+              <button class="choice" data-value="Brewed Coffee">Brewed</button>
+            </div>
+          </div>
+          <div class="choice-group">
+            <span class="choice-label">3. CREAMINESS</span>
+            <div class="segmented" data-group="cream">
+              <button class="choice active" data-value="2% Milk">2% Milk</button>
+              <button class="choice" data-value="Oat Milk">Oat</button>
+              <button class="choice" data-value="Ice Cream Base">Ice Cream Base</button>
+            </div>
+          </div>
+          <div class="choice-group">
+            <span class="choice-label">4. FLAVOR</span>
+            <div class="segmented" data-group="flavor">
+              <button class="choice active" data-value="Caramel">Caramel</button>
+              <button class="choice" data-value="Mocha">Mocha</button>
+              <button class="choice" data-value="White Mocha">White Mocha</button>
+              <button class="choice" data-value="Strawberry">Strawberry</button>
+            </div>
+          </div>
+          <div class="choice-group">
+            <span class="choice-label">5. FINISH</span>
+            <div class="segmented" data-group="finish">
+              <button class="choice active" data-value="Whipped Cream">Whipped Cream</button>
+              <button class="choice" data-value="Cold Foam">Cold Foam</button>
+              <button class="choice" data-value="No Foam">No Foam</button>
+            </div>
+          </div>
+          <div class="choice-group">
+            <span class="choice-label">6. REAL TOPPING</span>
+            <div class="segmented" data-group="realTopper">
+              <button class="choice active" data-value="Caramel Drizzle">Caramel Drizzle</button>
+              <button class="choice" data-value="Chocolate Drizzle">Chocolate Drizzle</button>
+              <button class="choice" data-value="Cookie Crumble">Cookie Crumble</button>
+              <button class="choice" data-value="Cosmic Gems">Cosmic Gems</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="drink-stage card-panel">
+          <div class="sunburst" aria-hidden="true"></div>
+          <div id="realDrink" class="drink-preview" data-cup="Hot" data-finish="Whipped Cream" data-topping="Caramel Drizzle">
+            <svg class="drink-svg" viewBox="0 0 340 430" role="img" aria-label="Your customized Scooter's coffee">
+              <defs>
+                <linearGradient id="cupGlass" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0" stop-color="#fffaf4" stop-opacity=".92"/>
+                  <stop offset=".55" stop-color="#f6dec5" stop-opacity=".72"/>
+                  <stop offset="1" stop-color="#d99b72" stop-opacity=".7"/>
+                </linearGradient>
+                <linearGradient id="coffeeGrad" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0" stop-color="#9b5b3d"/><stop offset=".55" stop-color="#6b3826"/><stop offset="1" stop-color="#c99d7b"/>
+                </linearGradient>
+                <filter id="softShadow" x="-30%" y="-30%" width="160%" height="180%"><feDropShadow dx="0" dy="12" stdDeviation="10" flood-color="#3b1b14" flood-opacity=".25"/></filter>
+              </defs>
+              <ellipse cx="170" cy="398" rx="106" ry="19" fill="#7d3c2d" opacity=".16"/>
+              <g filter="url(#softShadow)">
+                <path class="cup-shell" d="M83 162 L257 162 L241 376 Q238 396 218 401 L122 401 Q102 396 99 376 Z" fill="url(#cupGlass)" stroke="#552b21" stroke-width="7"/>
+                <path class="coffee-fill" d="M97 181 L243 181 L229 363 Q226 378 212 381 L128 381 Q114 378 111 363 Z" fill="url(#coffeeGrad)" opacity=".97"/>
+                <path class="cup-highlight" d="M116 192 C108 244 112 316 126 352" fill="none" stroke="#fff" stroke-width="12" stroke-linecap="round" opacity=".22"/>
+                <path class="cup-lid-svg" d="M74 154 Q170 128 266 154 L250 176 Q170 188 90 176 Z" fill="#f9f0e4" stroke="#552b21" stroke-width="7"/>
+                <g class="foam-group">
+                  <ellipse cx="170" cy="139" rx="77" ry="38" fill="#fffaf3" stroke="#552b21" stroke-width="6"/>
+                  <ellipse cx="170" cy="103" rx="64" ry="32" fill="#fffaf3" stroke="#552b21" stroke-width="6"/>
+                  <ellipse cx="170" cy="70" rx="47" ry="26" fill="#fffaf3" stroke="#552b21" stroke-width="6"/>
+                  <ellipse cx="170" cy="43" rx="31" ry="17" fill="#fffaf3" stroke="#552b21" stroke-width="6"/>
+                  <path class="drizzle-svg" d="M120 94 C140 70 159 116 180 83 C199 54 213 101 231 83 M112 127 C140 105 154 146 180 119 C202 97 222 135 238 117" fill="none" stroke="#cf6f19" stroke-width="10" stroke-linecap="round"/>
+                  <g class="crumbs-svg" fill="#6a3827"><circle cx="130" cy="87" r="6"/><circle cx="202" cy="63" r="5"/><circle cx="188" cy="116" r="5"/><circle cx="151" cy="52" r="4"/></g>
+                  <g class="gems-svg" fill="#ed3045"><circle cx="141" cy="77" r="5"/><circle cx="207" cy="91" r="5"/><circle cx="174" cy="52" r="4"/></g>
+                </g>
+                <g class="cup-badge-svg" transform="translate(104 248)">
+                  <circle cx="66" cy="62" r="58" fill="#fff" stroke="#ed1b2f" stroke-width="10"/>
+                  <rect x="1" y="45" width="130" height="35" rx="5" fill="#fff" stroke="#ed1b2f" stroke-width="4"/>
+                  <text x="66" y="33" text-anchor="middle" font-size="10" font-weight="800" fill="#b21f32">EST. 1998</text>
+                  <text x="66" y="69" text-anchor="middle" font-size="23" font-family="Georgia,serif" font-weight="700" fill="#1a1411">SCOOTER'S</text>
+                  <text x="66" y="94" text-anchor="middle" font-size="13" font-family="Georgia,serif" fill="#1a1411">COFFEE</text>
+                </g>
+                <circle class="smile-sticker" cx="237" cy="326" r="21" fill="#ffd632" stroke="#552b21" stroke-width="4"/>
+                <path d="M226 325 Q237 338 248 325" fill="none" stroke="#552b21" stroke-width="3.5" stroke-linecap="round"/>
+                <circle cx="230" cy="318" r="2.7" fill="#552b21"/><circle cx="244" cy="318" r="2.7" fill="#552b21"/>
+              </g>
+            </svg>
+          </div>
+          <div id="drinkSummary" class="drink-summary">Hot · Espresso · 2% Milk · Caramel · Whipped Cream · Caramel Drizzle</div>
+          <button id="magicTopperBtn" class="magic-button">✨ MAGIC TOPPER ✨</button>
+          <p class="tiny-warning">Half Caff McGraff strongly recommends that you do not press this.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="topperPhase" class="phase phase-topper hidden">
+      <div class="hud">
+        <div class="hud-item"><span>SMILES</span><strong id="smileScore">250</strong></div>
+        <div class="hud-item"><span>BANKED</span><strong id="bankedScore">0</strong></div>
+        <div class="hud-item"><span>MULTIPLIER</span><strong id="multiplier">×1.0</strong></div>
+        <button id="bankBtn" class="bank-button">BANK SMILES</button>
+      </div>
+
+      <div class="play-layout">
+        <aside class="topper-tray card-panel">
+          <div>
+            <p class="eyebrow">PHASE 2 · TOP IT!</p>
+            <h2>Drag on something unreasonable.</h2>
+            <p class="tray-help">Higher placement earns more Smiles, but off-center placement adds wobble.</p>
+          </div>
+          <div id="topperList" class="topper-list"></div>
+          <div id="comboHint" class="combo-hint">SECRET COMBOS EXIST.</div>
+        </aside>
+
+        <section class="tower-wrap" aria-label="Coffee stacking area">
+          <div class="smile-meter" aria-label="Smile-O-Meter">
+            <div class="meter-title">SMILE-O-METER</div>
+            <div class="meter-track">
+              <div id="meterFill" class="meter-fill"></div>
+              <div class="meter-step step-6"><span>🤪</span><b>MAXIMUM SMILE</b></div>
+              <div class="meter-step step-5"><span>🤣</span><b>WHAT IS THAT?</b></div>
+              <div class="meter-step step-4"><span>😁</span><b>UNHINGED</b></div>
+              <div class="meter-step step-3"><span>😊</span><b>RIDICULOUS</b></div>
+              <div class="meter-step step-2"><span>🙂</span><b>HAPPY</b></div>
+              <div class="meter-step step-1"><span>•</span><b>NICE</b></div>
+            </div>
+          </div>
+
+          <div id="towerStage" class="tower-stage">
+            <div class="stage-copy" id="stageCopy" aria-live="polite">Drop a topper above the coffee.</div>
+            <div id="cosmicFx" class="cosmic-fx" aria-hidden="true"></div>
+
+            <div class="mcgraff-field" aria-label="Half Caff McGraff is creeping toward your coffee">
+              <div id="mcgraffQuote" class="field-speech">“Go ahead. Add one more.”</div>
+              <div id="mcgraff" class="mcgraff-field-char" aria-hidden="true">
+                <span class="hat-fix hat-fix-black"></span>
+                <span class="hat-bell"></span>
+                <img src="assets/half-caff.png" alt="">
+              </div>
+              <div class="mischief-path" aria-hidden="true"><span>SAFE</span><span>UH-OH</span><span>TOO CLOSE</span></div>
+            </div>
+
+            <div id="towerRig" class="tower-rig">
+              <div id="stack" class="stack" aria-label="Current topper stack"></div>
+              <div id="baseDrink" class="base-drink">
+                <div class="base-foam"></div>
+                <div class="base-lid"></div>
+                <div class="base-cup">
+                  <div class="base-liquid"></div>
+                  <div class="mini-badge"><span>SCOOTER'S</span><small>COFFEE</small></div>
+                </div>
+              </div>
+            </div>
+            <div id="fallZone" class="fall-zone" aria-hidden="true"></div>
+          </div>
+
+          <div class="mcgraff-action-bar" aria-label="Half Caff defense control">
+            <div class="mcgraff-action-copy"><strong>HALF CAFF GETTING TOO CLOSE?</strong><span>Spend 100 Smiles to shove him back 40% and reset his Mischief Streak.</span></div>
+            <button id="distractBtn" class="distract-button">😊 DISTRACT HALF CAFF · 100</button>
+          </div>
+          <div class="stability-strip">
+            <span>STABILITY</span>
+            <div class="stability-track"><div id="stabilityFill" class="stability-fill"></div></div>
+            <strong id="stabilityLabel">STEADY</strong>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <section id="resultOverlay" class="result-overlay hidden" role="dialog" aria-modal="true" aria-labelledby="resultTitle">
+      <div class="result-card">
+        <div id="resultIcon" class="result-icon">🏆</div>
+        <p class="eyebrow">SCOOT YOUR LUCK</p>
+        <h2 id="resultTitle">YOU BANKED IT!</h2>
+        <p id="resultText">Your ridiculous coffee survived.</p>
+        <div class="result-stats">
+          <div><span>BANKED SMILES</span><strong id="finalSmiles">0</strong></div>
+          <div><span>TOPPERS</span><strong id="finalToppers">0</strong></div>
+          <div><span>SMILE LEVEL</span><strong id="finalLevel">NICE</strong></div>
+        </div>
+        <button id="replayBtn" class="magic-button">BUILD ANOTHER</button>
+      </div>
+    </section>
+  </main>
+  <script src="game.js"></script>
+</body>
+</html>
